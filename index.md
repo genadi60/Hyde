@@ -5,3 +5,7 @@
 layout: page
 title: Hyde
 ---
+<p>
+    <h2>Hi there!</h2>
+</p>
+<p>Another paragraph</p>
