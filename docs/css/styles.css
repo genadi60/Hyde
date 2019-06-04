@@ -1,3 +1,131 @@
+:root {
+    --color-main-bgrd: #900;
+    --color-main-text: #FFF;
+    --sizing-ws-base: 1.5em;
+    --sizing-fs-base: 12px;
+
+    --sizing-fs-tablet: 14px;
+    --sizing-fs-laptop: 16px;
+    --sizing-fs-desktop: 18px;
+    --sizing-fs-huge: 20px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* Typography*/
+
+html {
+    font: var(--sizing-fs-base)/1.5 "Georgia", serif;
+}
+
+@media (min-width: 600px) {
+    html {
+        font-size: var(--sizing-fs-tablet);
+    }
+}
+
+@media (min-width: 1260px) {
+    html {
+        font-size: var(--sizing-fs-laptop);
+    }
+}
+
+@media (min-width: 1420px) {
+    html {
+        font-size: var(--sizing-fs-desktop);
+    }
+}
+
+@media (min-width: 1660px) {
+    html {
+        font-size: var(--sizing-fs-huge);
+    }
+}
+
+p, ul, ol, dl, table {
+    margin-bottom: var(--sizing-ws-base);
+}
+
+ul, ol {
+    padding-left: var(--sizing-ws-base);
+}
+
+h1, h2, h3 {
+    margin: 0 0 calc(var(--sizing-ws-base) / 3) 0;
+    font-style: inherit;
+}
+
 body {
-    background: burlywood;
+    background: var(--color-main-bgrd, #000);
+    color: var(--color-main-text, #FF0);
+    padding: 4rem;
+}
+
+h2 {
+    -webkit-animation: slidein 1.5s forwards;
+            animation: slidein 1.5s forwards;
+    -webkit-animation-delay: 0.5s;
+            animation-delay: 0.5s;
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+    -webkit-animation-direction: alternate;
+            animation-direction: alternate;
+    -webkit-animation-timing-function: cubic-bezier(0,.57,.45,1.66);
+            animation-timing-function: cubic-bezier(0,.57,.45,1.66);
+}
+
+/*body:not(hover) h2 {
+    animation: slidein 1.5s forwards;
+    animation-delay: 0.5s;
+    animation-direction: reverse;
+}*/
+
+/*body:hover h2{
+    transform: translateX(0);
+    color: lime;
+}*/
+
+@-webkit-keyframes slidein {
+    from {
+        -webkit-transform: translateX(-5%);
+                transform: translateX(-5%);
+        color: #FFF;
+        opacity: 0;
+    }
+
+    to {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+        color: lime;
+        opacity: 1;
+    }
+}
+
+@keyframes slidein {
+    from {
+        -webkit-transform: translateX(-5%);
+                transform: translateX(-5%);
+        color: #FFF;
+        opacity: 0;
+    }
+
+    to {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+        color: lime;
+        opacity: 1;
+    }
 }

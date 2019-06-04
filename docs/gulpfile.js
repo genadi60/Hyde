@@ -7,7 +7,7 @@ let gulp = require('gulp'),
 gulp.task('css', function () {
     return gulp.src('_assets/css/**/*.css')
         .pipe(autoprefixer())
-        .pipe(gulp.dest('docs/css/'))
+        .pipe(gulp.dest('./docs/css/'))
         .pipe(browserSync.stream({match: '**/*.css'}));
 });
 
