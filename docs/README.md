@@ -1,2 +1,0 @@
-# Hyde
-Jekyll theme
