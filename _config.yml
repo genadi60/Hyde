@@ -23,7 +23,7 @@ description: This is scary, but awesome!
   # Google search results) and in your feed.xml site description.
 destination: docs
 exclude: [_assets, Gemfile, Gemfile.lock, gulpfile.js, package.json, package-lock.json, npm-debug.log, README.md, node_modules]
-# baseurl: "/Hyde" # the subpath of your site, e.g. /blog
+baseurl: "/Hyde" # the subpath of your site, e.g. /blog
 baseurl: ""
 url: "https://genadi60.github.io/Hyde" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
