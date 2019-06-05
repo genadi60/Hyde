@@ -24,7 +24,7 @@ description: This is scary, but awesome!
 destination: docs
 exclude: [_assets, Gemfile, Gemfile.lock, gulpfile.js, package.json, package-lock.json, npm-debug.log, README.md, node_modules]
 baseurl: "/Hyde" # the subpath of your site, e.g. /blog
-baseurl: ""
+# baseurl: ""
 url: "https://genadi60.github.io/Hyde" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  genadi60
