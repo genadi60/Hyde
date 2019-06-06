@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="{{site.baseurl}}/css/styles.css">
-</head>
-<body>
-<nav>
-    <a href="{{site.baseurl}}/">Home</a>
-    <a href="{{site.baseurl}}/about/">About</a>
-    <a href="{{site.baseurl}}/contacts/">Contacts</a>
-</nav>
-<h1>{{ page.title }}</h1>
-<section>
-    {{ content }}
-</section>
-<footer>
-    &copy; by Genadi
-</footer>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ page.title }}</title>
+        <link rel="stylesheet" href="{{site.baseurl}}/css/styles.css">
+    </head>
+    <body>
+        <header class="site-header">
+            <h1><a href="/">{{ site.title }}</a></h1>
+            {% include navigation.html %}
+        </header>
+        <main class="site-content">
+            {{ content }}
+        </main>
+        <footer class="site-footer">
+            &copy; by Genadi
+        </footer>
+    </body>
 </html>
