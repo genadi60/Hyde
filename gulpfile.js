@@ -7,7 +7,7 @@ exec = require('gulp-exec'),
 spawn = process.platform === 'win32' ? require('win-spawn') : require('child_process').spawn;
 
 gulp.task('css', function () {
-    return gulp.src('_assets/css/**/*.css')
+    return gulp.src('./_assets/css/**/*.css')
         .pipe(autoprefixer())
         .pipe(gulp.dest('./docs/css/'))
         .pipe(browserSync.stream({match: '**/*.css'}));
@@ -33,14 +33,14 @@ gulp.task('watch', function () {
         }
     });
 
-    gulp.watch('_assets/css/**/*.css', gulp.series('css'));
+    gulp.watch(['_assets/css/**/*.css', 'css/**/*.css'], gulp.series('css'));
 
     gulp.watch([
         './*.html',
         './_includes/*.html',
         './_layouts/*.html',
         './_posts/**/*.*'
-    ]).on('change', gulp.series('jekyll', 'css'));
+    ]).on('change', gulp.series('css', 'jekyll'));
 
     gulp.watch('docs/**/*.html').on('change', browserSync.reload);
     gulp.watch('docs/**/*.js').on('change', browserSync.reload);

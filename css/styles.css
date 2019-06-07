@@ -1,3 +1,19 @@
-body {
-    background: green;
+@import url('typography.css');
+@import url('navigation.css');
+@import url('site-header.css');
+
+:root {
+    --color-main-bgrd: #9F9;
+    --color-main-text: #FFF;
+    --color-main-link: orange;
 }
+
+body {
+    background: var(--color-main-bgrd, #000);
+    color: var(--color-main-text, #FF0);
+    padding: 2rem 3rem;
+}
+
+.site-content {
+     padding: 1.5rem 0;
+ }
