@@ -1,5 +1,7 @@
 @import url('typography.css');
 @import url('navigation.css');
+@import url('gallery.css');
+
 @import url('site-header.css');
 @import url('site-footer.css');
 
@@ -10,7 +12,7 @@
     
     --color-basic-border: #BBB;
 
-    --sizing-basic-border: 1px;
+    --sizing-basic-border: 2px;
 }
 
 body {
