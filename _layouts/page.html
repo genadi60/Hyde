@@ -5,7 +5,7 @@
         <title>{{ page.title }}</title>
         <link rel="stylesheet" href="{{site.baseurl}}/css/styles.css">
     </head>
-    <body>
+    <body class="{{page.body_class}} {{page.title | slugify}}">
         <header class="site-header">
             <h1><a href="/">{{ site.title }}</a></h1>
             {% include navigation.html %}

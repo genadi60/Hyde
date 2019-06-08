@@ -24,3 +24,7 @@ body {
 .site-content {
     padding: var(--sizing-ws-base) 0;
 }
+
+body.gallery .site-header .main-nav a {
+    font-style: italic;
+}

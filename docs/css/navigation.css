@@ -1,15 +1,18 @@
 .main-nav {
-    border: solid #BBB;
-    border-width: var(--sizing-basic-border) 0;
+    background: #666;
 }
 
 .main-nav ul {
-    display: flex;
     padding: 0;
     margin: 0;
 }
 
+.main-nav > ul {
+    display: flex;
+}
+
 .main-nav li {
+    position: relative;
     display: block;
     list-style: none outside;
 }
@@ -17,6 +20,62 @@
 .main-nav a {
     display: block;
     padding: 0.5em 1em;
+    background: #333;
     text-decoration: none;
-    color: var(--color-main-link);
+    outline: none;
+    color: #FFF;
+    transition: background 0.4s ease;
+}
+
+.main-nav a:focus,
+.main-nav a:hover {
+    background: #900;
+    text-decoration: underline;
+}
+
+/* Level 2 */
+
+.main-nav > ul ul {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 100;
+   /* opacity: 0;*/
+    pointer-events: none;
+    border-bottom-left-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;
+    /*transform: translateY(-2rem);
+    transition: opacity 0.8s ease, transform 0.2s ease-out;*/
+    overflow: hidden;
+}
+
+.main-nav li:hover > ul {
+    pointer-events: all;
+    /*transform: translateY(0);
+    opacity: 1;*/
+}
+
+.main-nav > ul ul li {
+    opacity: 0;
+    -webkit-transform: translateY(-2rem);
+            transform: translateY(-2rem);
+    transition: opacity 0.8s ease, -webkit-transform 0.2s ease-out;
+    transition: opacity 0.8s ease, transform 0.2s ease-out;
+    transition: opacity 0.8s ease, transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
+}
+
+.main-nav li:hover > ul > li{
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+}
+
+.main-nav li:hover > ul > li:nth-child(2) {transition-delay: 0.08s}
+.main-nav li:hover > ul > li:nth-child(3) {transition-delay: 0.16s}
+.main-nav li:hover > ul > li:nth-child(4) {transition-delay: 0.24s}
+.main-nav li:hover > ul > li:nth-child(5) {transition-delay: 0.32s}
+
+.main-nav > ul ul a {
+    padding: 0.7em 2em 0.7em 1em;
 }
