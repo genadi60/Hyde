@@ -1,0 +1,13 @@
+body {
+    background: var(--color-main-bgrd, #000);
+    color: var(--color-main-text, #FF0);
+    /*padding: 0 2rem;*/
+}
+
+.site-content {
+    padding: var(--sizing-ws-base) 2rem;
+}
+
+body.gallery .site-header .main-nav a {
+    font-style: italic;
+}

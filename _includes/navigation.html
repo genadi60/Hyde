@@ -11,16 +11,16 @@
 
                     <ul>
                         {% for page in site.pages %}
-                        {% if page.url != '/feed.xml' and page.url != '/' %}
+                            {% if page.url != '/feed.xml' and page.url != '/' %}
 
-                        <li>
-                            <a href='{{ page.url }}'>
-                                <span class="title">{{ page.title }}</span>
-                                <span class="date"></span>
-                            </a>
-                        </li>
+                                <li>
+                                    <a href='{{ page.url }}'>
+                                        <span class="title">{{ page.title }}</span>
+                                        <span class="date"><!--{{site.time | date_to_string}}--></span>
+                                    </a>
+                                </li>
 
-                        {% endif %}
+                            {% endif %}
                         {% endfor %}
 
                     </ul>
@@ -32,3 +32,4 @@
 
     </ul>
 </nav>
+<a href="#" class="button button-primary">Call us</a>

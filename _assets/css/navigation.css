@@ -1,5 +1,5 @@
 .main-nav {
-    background: #666;
+    /*background: #666;*/
 }
 
 .main-nav ul {
@@ -20,9 +20,11 @@
 .main-nav a {
     display: block;
     padding: 0.5em 1em;
-    background: #333;
+    background: rgba(0,0,0,0.4);
     text-decoration: none;
+    border-radius: 0.3rem;
     outline: none;
+    margin-right: 0.2rem;
     color: #FFF;
     transition: background 0.4s ease;
 }
@@ -40,14 +42,19 @@
     position: absolute;
     top: 100%;
     left: 0;
+
     z-index: 100;
    /* opacity: 0;*/
     pointer-events: none;
-    border-bottom-left-radius: 0.3em;
-    border-bottom-right-radius: 0.3em;
+    /*border-bottom-left-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;*/
     /*transform: translateY(-2rem);
     transition: opacity 0.8s ease, transform 0.2s ease-out;*/
     overflow: hidden;
+}
+
+.main-nav > ul ul a {
+    margin-top: 0.2rem;
 }
 
 .main-nav li:hover > ul {
