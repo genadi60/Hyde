@@ -4,7 +4,7 @@
             {% if page.url != '/feed.xml' and page.url != '/' %}
 
                 <li>
-                    <a href='{{ page.url }}'>
+                    <a href='{{site.baseurl}}{{ page.url }}'>
                         <span class="title">{{ page.title }}</span>
                         <span class="date"></span>
                     </a>
@@ -14,7 +14,7 @@
                             {% if page.url != '/feed.xml' and page.url != '/' %}
 
                                 <li>
-                                    <a href='{{ page.url }}'>
+                                    <a href='{{site.baseurl}}{{ page.url }}'>
                                         <span class="title">{{ page.title }}</span>
                                         <span class="date"><!--{{site.time | date_to_string}}--></span>
                                     </a>

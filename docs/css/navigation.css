@@ -67,16 +67,12 @@
 
 .header-nav > ul ul li {
     opacity: 0;
-    -webkit-transform: translateY(-15rem);
-            transform: translateY(-15rem);
-    transition: opacity 1s ease, -webkit-transform 0.3s ease-out;
+    transform: translateY(-15rem);
     transition: opacity 1s ease, transform 0.3s ease-out;
-    transition: opacity 1s ease, transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
 }
 
 .header-nav li:hover > ul > li{
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    transform: translateY(0);
     opacity: 1;
 }
 
