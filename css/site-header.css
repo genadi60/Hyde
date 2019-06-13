@@ -2,10 +2,59 @@
 
 }
 
-.site-header h1 {
-    color: #A00;
+.site-header .inner {
+    display: flex;
+    padding: 1rem var(--sizing-lt-base) 0 var(--sizing-lt-base);
+
+    justify-content: space-between;
+    align-items: center;
 }
 
-.site-header a {
+.site-header nav {
+    margin-right: auto;
+}
+
+.site-header .inner > a.button:hover {
+
+}
+
+.site-header nav ul {
+
+}
+
+
+/*
+* Homepage Header Banner
+* Aspect Ratio Boxes with CSS
+* https://css-tricks.com/aspect-ratio-boxes/
+*/
+
+.site-header.banner {
+    position: relative;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.site-header.banner .brand a {
+    color: #A00;
     text-decoration: none;
+}
+
+.site-header.banner:after {
+    display: block;
+    content: '';
+}
+
+.site-header.banner.size-large:after {
+    padding-top: calc((9 / 16) * 100%); /* Aspect Ratio 16/9 */
+}
+
+.site-header.banner.size-small:after {
+    padding-top: calc((9 / 32) * 100%); /* Aspect Ratio 32/9 */
+}
+
+.site-header .inner .brand {
+    margin-right: var(--sizing-lt-base);
+    margin-bottom: 0;
 }

@@ -1,4 +1,4 @@
-<nav class="main-nav">
+<nav class="{{include.location}}-nav">
     <ul>
         {% for page in site.pages %}
             {% if page.url != '/feed.xml' and page.url != '/' %}
@@ -32,4 +32,5 @@
 
     </ul>
 </nav>
-<a href="#" class="button button-primary">Call us</a>
+<a href="mailto:genadimihaylov@gmail.com" class="button">Call us</a>
+

@@ -1,23 +1,27 @@
-.main-nav {
-    /*background: #666;*/
+/*
+* Header Navigation Style
+*/
+
+
+.header-nav {
 }
 
-.main-nav ul {
+.header-nav ul {
     padding: 0;
     margin: 0;
 }
 
-.main-nav > ul {
+.header-nav > ul {
     display: flex;
 }
 
-.main-nav li {
+.header-nav li {
     position: relative;
     display: block;
     list-style: none outside;
 }
 
-.main-nav a {
+.header-nav a {
     display: block;
     padding: 0.5em 1em;
     background: rgba(0,0,0,0.4);
@@ -29,15 +33,15 @@
     transition: background 0.4s ease;
 }
 
-.main-nav a:focus,
-.main-nav a:hover {
+.header-nav a:focus,
+.header-nav a:hover {
     background: #900;
     text-decoration: underline;
 }
 
 /* Level 2 */
 
-.main-nav > ul ul {
+.header-nav > ul ul {
     display: block;
     position: absolute;
     top: 100%;
@@ -53,32 +57,69 @@
     overflow: hidden;
 }
 
-.main-nav > ul ul a {
+.header-nav > ul ul a {
     margin-top: 0.2rem;
 }
 
-.main-nav li:hover > ul {
+.header-nav li:hover > ul {
     pointer-events: all;
-    /*transform: translateY(0);
-    opacity: 1;*/
 }
 
-.main-nav > ul ul li {
+.header-nav > ul ul li {
     opacity: 0;
-    transform: translateY(-2rem);
-    transition: opacity 0.8s ease, transform 0.2s ease-out;
+    transform: translateY(-15rem);
+    transition: opacity 1s ease, transform 0.3s ease-out;
 }
 
-.main-nav li:hover > ul > li{
+.header-nav li:hover > ul > li{
     transform: translateY(0);
     opacity: 1;
 }
 
-.main-nav li:hover > ul > li:nth-child(2) {transition-delay: 0.08s}
-.main-nav li:hover > ul > li:nth-child(3) {transition-delay: 0.16s}
-.main-nav li:hover > ul > li:nth-child(4) {transition-delay: 0.24s}
-.main-nav li:hover > ul > li:nth-child(5) {transition-delay: 0.32s}
+.header-nav li:hover > ul > li:nth-child(2) {transition-delay: 0.08s}
+.header-nav li:hover > ul > li:nth-child(3) {transition-delay: 0.16s}
+.header-nav li:hover > ul > li:nth-child(4) {transition-delay: 0.24s}
+.header-nav li:hover > ul > li:nth-child(5) {transition-delay: 0.32s}
 
-.main-nav > ul ul a {
+.header-nav > ul ul a {
     padding: 0.7em 2em 0.7em 1em;
+}
+
+/*
+* Footer Navigation Style
+*/
+
+.footer-nav {
+}
+
+.footer-nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav > ul {
+    display: flex;
+    list-style: none;
+}
+
+.footer-nav li ul {
+    display: none;
+}
+
+.footer-nav a {
+    display: block;
+    padding: 0.5em 1em;
+    background: rgba(0,0,0,0.4);
+    text-decoration: none;
+    border-radius: 0.3rem;
+    outline: none;
+    margin-right: 0.2rem;
+    color: #FFF;
+    transition: background 0.4s ease;
+}
+
+.footer-nav a:focus,
+.footer-nav a:hover {
+    background: #900;
+    text-decoration: underline;
 }

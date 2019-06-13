@@ -1,11 +1,15 @@
 body {
     background: var(--color-main-bgrd, #000);
     color: var(--color-main-text, #FF0);
-    /*padding: 0 2rem;*/
+}
+
+.site-content iframe {
+    width: 100%;
+    padding-bottom: var(--sizing-lt-base);
 }
 
 .site-content {
-    padding: var(--sizing-ws-base) 2rem;
+    padding: var(--sizing-lt-base);
 }
 
 body.gallery .site-header .main-nav a {

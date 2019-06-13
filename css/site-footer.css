@@ -1,6 +1,6 @@
 .site-footer {
     border-top: var(--sizing-basic-border) solid var(--color-basic-border);
-    padding-top: var(--sizing-ws-base);
+    padding: var(--sizing-lt-base);
     font-size: 0.8em;
 }
 
@@ -10,5 +10,9 @@
 }
 
 .site-footer .main-nav a {
-    color: purple;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.site-footer .button {
+    display: none;
 }

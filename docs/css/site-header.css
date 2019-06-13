@@ -4,7 +4,7 @@
 
 .site-header .inner {
     display: flex;
-    padding: 1rem 2rem 0 2rem;
+    padding: 1rem var(--sizing-lt-base) 0 var(--sizing-lt-base);
 
     justify-content: space-between;
     align-items: center;
@@ -14,17 +14,8 @@
     margin-right: auto;
 }
 
-.site-header .inner > a.button {
-    color: #BBB;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 0.3rem;
-    background-color: #A00;
-}
-
 .site-header .inner > a.button:hover {
-    color: #FFF;
-    background-color: #F00;
+
 }
 
 .site-header nav ul {
@@ -45,7 +36,7 @@
     background-size: cover;
 }
 
-.site-header.banner h1 a {
+.site-header.banner .brand a {
     color: #A00;
     text-decoration: none;
 }
@@ -53,10 +44,17 @@
 .site-header.banner:after {
     display: block;
     content: '';
+}
+
+.site-header.banner.size-large:after {
     padding-top: calc((9 / 16) * 100%); /* Aspect Ratio 16/9 */
 }
 
-.site-header .inner h1 {
-    margin-right: 2rem;
+.site-header.banner.size-small:after {
+    padding-top: calc((9 / 32) * 100%); /* Aspect Ratio 32/9 */
+}
+
+.site-header .inner .brand {
+    margin-right: var(--sizing-lt-base);
     margin-bottom: 0;
 }
