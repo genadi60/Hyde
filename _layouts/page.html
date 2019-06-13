@@ -9,7 +9,7 @@
     <body class="{{page.body_class}} {{page.title | slugify}}">
         <header class="site-header banner {% if page.url == '/' %} size-large {% else %} size-small {% endif %}" style="background-image: url(https://images.unsplash.com/photo-1560215704-64a4cba82a67?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80)">
             <div class="inner">
-                <h1 class="brand"><a href="/">{{ site.title }}</a></h1>
+                <h1 class="brand"><a href="{{site.baseurl}}/">{{ site.title }}</a></h1>
                 {% include navigation.html location='header' %}
             </div>
         </header>
