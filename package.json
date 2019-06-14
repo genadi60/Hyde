@@ -10,12 +10,14 @@
   },
   "homepage": "https://github.com/genadi60/Hyde#readme",
   "devDependencies": {
-    "browser-sync": "^2.26.5",
+    "browser-sync": "^2.26.7",
     "exec": "^0.2.1",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
     "gulp-exec": "^3.0.2",
-    "jekyll": "^3.0.0-beta1"
+    "gulp-sass": "^4.0.2",
+    "jekyll": "^3.0.0-beta1",
+    "node-sass": "^4.12.0"
   },
   "dependencies": {
     "bundle": "^2.1.0",
