@@ -1,10 +1,19 @@
-.site-header .inner {
-    display: flex;
-    padding: 1rem var(--sizing-lt-base) 0 var(--sizing-lt-base);
+.site-header {
+    .inner {
+        display: flex;
+        padding: 1rem var(--sizing-lt-base) 0 var(--sizing-lt-base);
+        justify-content: space-between;
+        align-items: center;
 
-    justify-content: space-between;
-    align-items: center;
-}
+        .brand {
+            margin-right: var(--sizing-lt-base);
+            margin-bottom: 0;
+        }
+
+        @include bp('tablet') {
+            flex-direction: column;
+        }
+    }
 
     /*
     * Homepage Header Banner
@@ -12,32 +21,28 @@
     * https://css-tricks.com/aspect-ratio-boxes/
     */
 
-.site-header.banner {
-    position: relative;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+    &.banner {
+        position: relative;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
 
-.site-header.banner .brand a {
-    color: #E66;
-    text-decoration: none;
-}
+        .brand a {
+            color: #E66;
+            text-decoration: none;
+        }
 
-.site-header.banner:after {
-    display: block;
-    content: '';
-}
+        &:after {
+            display: block;
+            content: '';
+        }
 
-.site-header.banner.size-large:after {
-    padding-top: calc((9 / 16) * 100%); /* Aspect Ratio 16/9 */
-}
+        &.size-large:after {
+            padding-top: calc((9 / 16) * 100%); /* Aspect Ratio 16/9 */
+        }
 
-.site-header.banner.size-small:after {
-    padding-top: calc((9 / 32) * 100%); /* Aspect Ratio 32/9 */
-}
-
-.site-header .inner .brand {
-    margin-right: var(--sizing-lt-base);
-    margin-bottom: 0;
+        &.size-small:after {
+            padding-top: calc((9 / 32) * 100%); /* Aspect Ratio 32/9 */
+        }
+    }
 }

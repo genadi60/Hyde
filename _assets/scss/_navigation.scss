@@ -1,9 +1,8 @@
-    /*
-    * Main Navigation Style
-    */
+/*
+* Main Navigation Style
+*/
 
-.footer-nav,
-.header-nav {
+nav {
 
     ul {
         padding: 0;
@@ -28,7 +27,7 @@
         outline: none;
         margin-right: 0.2rem;
         color: #FFF;
-        transition: background 0.4s ease;
+        transition: background 1s ease;
     }
 
     a:focus,
@@ -39,74 +38,111 @@
 }
 
 
-    /*
-    * Header Navigation Style
-    */
+/*
+* Header Navigation Style
+*/
 
 
 .header-nav {
 
     margin-right: auto;
 
+    ul {
+        @include bp('tablet') {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
     li {
         position: relative;
     }
 
-    /* Level 2 */
+    /* Level 2 - only for larger devices */
 
-    & > ul ul {
-        display: block;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        pointer-events: none;
-        overflow: hidden;
-        z-index: 100;
+    @include bp('laptop') {
+
+        & > ul ul {
+            display: block;
+            position: absolute;
+            top: 100%;left: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 100;
+
+            li{
+                opacity: 0;
+                transform: translateY(-15rem);
+                transition: opacity 0.8s ease-in, transform 0.3s ease-out;
+            }
+
+            a {
+                margin-top: 0.2rem;
+                padding: 0.7em 2em 0.7em 1em;
+                width: 100%;
+            }
+        }
+
+        li:hover {
+
+            & > ul {
+
+                pointer-events: all;
+
+                & > li {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+
+                & > li:nth-child(2) {
+                    transition-delay: 0.08s
+                }
+
+                & > li:nth-child(3) {
+                    transition-delay: 0.16s
+                }
+
+                & > li:nth-child(4) {
+                    transition-delay: 0.24s
+                }
+
+                & > li:nth-child(5) {
+                    transition-delay: 0.32s
+                }
+            }
+        }
     }
 
-    & > ul ul a {
-        margin-top: 0.2rem;
-    }
+    /* Hide-Show entire Nav element for different devices */
+    @include bp('tablet') {
 
-    li:hover > ul {
-        pointer-events: all;
-    }
+        width: 100%;
 
-    & > ul ul li {
-        opacity: 0;
-        transform: translateY(-15rem);
-        transition: opacity 1s ease, transform 0.3s ease-out;
-    }
+        @at-root #toggle-main-nav + .site-header & {
+            display: none;
+        }
 
-    li:hover > ul > li {
-        transform: translateY(0);
-        opacity: 1;
-    }
-
-    li:hover > ul > li:nth-child(2) {
-        transition-delay: 0.08s
-    }
-
-    li:hover > ul > li:nth-child(3) {
-        transition-delay: 0.16s
-    }
-
-    li:hover > ul > li:nth-child(4) {
-        transition-delay: 0.24s
-    }
-
-    li:hover > ul > li:nth-child(5) {
-        transition-delay: 0.32s
-    }
-
-    & > ul ul a {
-        padding: 0.7em 2em 0.7em 1em;
+        @at-root #toggle-main-nav:checked + .site-header & {
+            display: block;
+        }
     }
 }
 
-    /*
-    * Footer Navigation Style
-    */
+.toggle-main-nav-button {
+    @include bp('laptop') { display: none; }
+    @include bp('tablet') { display: block; }
+}
+
+
+#toggle-main-nav {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/*
+* Footer Navigation Style
+*/
 
 .footer-nav {
 

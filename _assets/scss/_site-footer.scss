@@ -2,13 +2,13 @@
     border-top: var(--sizing-basic-border) solid var(--color-basic-border);
     padding: var(--sizing-lt-base);
     font-size: 0.8em;
-}
 
-.site-footer p {
-    font-style: italic;
-    color: rgba(0, 0, 0, 0.5);
-}
+    p {
+        font-style: italic;
+        color: rgba(0, 0, 0, 0.5);
+    }
 
-.site-footer .button {
-    display: none;
+    .button {
+        display: none;
+    }
 }
