@@ -23,7 +23,6 @@ nav {
         padding: 0.5em 1em;
         background: rgba(0, 0, 0, 0.4);
         text-decoration: none;
-        border-radius: 0.3rem;
         outline: none;
         margin-right: 0.2rem;
         color: #FFF;
@@ -41,7 +40,6 @@ nav {
 /*
 * Header Navigation Style
 */
-
 
 .header-nav {
 
@@ -61,6 +59,10 @@ nav {
     /* Level 2 - only for larger devices */
 
     @include bp('laptop') {
+
+        & a {
+            border-radius: 0.3rem;
+        }
 
         & > ul ul {
             display: block;
@@ -117,6 +119,7 @@ nav {
     @include bp('tablet') {
 
         width: 100%;
+        padding: 1rem 0;
 
         @at-root #toggle-main-nav + .site-header & {
             display: none;
@@ -128,9 +131,16 @@ nav {
     }
 }
 
-.toggle-main-nav-button {
+.site-header .toggle-main-nav-button {
     @include bp('laptop') { display: none; }
-    @include bp('tablet') { display: block; }
+    @include bp('tablet') {
+        @at-root #toggle-main-nav:checked + & {
+            display: none;
+        }
+        @at-root #toggle-main-nav + & {
+            display: block;
+        }
+    }
 }
 
 
@@ -144,9 +154,19 @@ nav {
 * Footer Navigation Style
 */
 
+.site-footer {
+    .toggle-main-nav-button {
+        display: none;
+    }
+}
+
 .footer-nav {
 
-     li ul {
+    li ul {
         display: none;
+    }
+
+    a {
+        border-radius: 0.3rem;
     }
 }

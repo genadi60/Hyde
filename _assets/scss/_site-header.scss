@@ -12,6 +12,10 @@
 
         @include bp('tablet') {
             flex-direction: column;
+
+            .brand {
+                margin-right: 0;
+            }
         }
     }
 
