@@ -5,12 +5,15 @@
 </label>
 <nav class="{{include.location}}-nav">
     <ul>
+        <li>
+            <a href="{{site.baseurl}}/"><span><i class="fas fa-home"></i> Home</span></a>
+        </li>
         {% for page in site.pages %}
             {% if page.url != '/feed.xml' and page.url != '/' %}
 
                 <li>
-                    <a href='{{site.baseurl}}{{ page.url }}'>
-                        <span class="title">{{ page.title }}</span>
+                    <a href='{{ page.url }}'>
+                        <span class="title">{{ page.icon }} {{ page.title }}</span>
                         <span class="date"></span>
                     </a>
 
@@ -20,7 +23,7 @@
 
                                 <li>
                                     <a href='{{site.baseurl}}{{ page.url }}'>
-                                        <span class="title">{{ page.title }}</span>
+                                        <span class="title">{{ page.icon }} {{ page.title }}</span>
                                         <span class="date"><!--{{site.time | date_to_string}}--></span>
                                     </a>
                                 </li>
