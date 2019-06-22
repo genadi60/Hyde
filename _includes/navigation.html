@@ -12,7 +12,7 @@
             {% if page.url != '/feed.xml' and page.url != '/' %}
 
                 <li>
-                    <a href='{{ page.url }}'>
+                    <a href='{{site.baseurl}}{{ page.url }}'>
                         <span class="title">{{ page.icon }} {{ page.title }}</span>
                         <span class="date"></span>
                     </a>
