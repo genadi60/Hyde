@@ -4,17 +4,48 @@ title: About
 icon: <i class="fas fa-info"></i>
 permalink: /about/
 body_class: page
+order: 5
 ---
-<article>
-    <header>
-        <h2><i class="fas fa-info"></i> About</h2>
-    </header>
-    <section>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-    </section>
-</article>
+<section class="content">
+    <div class="wraper">
+        <article>
+            <header>
+                <h2><i class="fas fa-info"></i> About</h2>
+            </header>
+            <section>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+            </section>
+        </article>
+    </div>
+</section>
+
+<section class="testimonials_section">
+    <div class="wraper">
+        <ul class="testimonials">
+            {% for i in (1..5) %}
+            {% if i == 4 %}
+            {% break %}
+            {% else %}
+            <li>
+                <a href="#">
+                    <span class="avatar">
+                        <img src="https://randomuser.me/api/portraits/men/91.jpg" alt="avatar">
+                    </span>
+                    <span class="name">Genadi</span>
+                    <span class="jobtitle">Constructor</span>
+                    <span class="message">
+                        This is only demo!
+                    </span>
+                </a>
+            </li>
+            {% endif %}
+            {% endfor %}
+
+        </ul>
+    </div>
+</section>

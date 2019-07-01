@@ -27,6 +27,10 @@ nav {
         list-style: none outside;
     }
 
+    li.active-page > a {
+        background: #900;
+    }
+
     a {
         display: block;
         padding: 0.5em 1em;
@@ -37,6 +41,7 @@ nav {
         color: #FFF;
         transition: background 1s ease;
     }
+
 
     a:focus,
     a:hover {
@@ -58,6 +63,8 @@ nav {
         @include bp('tablet') {
             display: flex;
             flex-direction: column;
+            position: relative;
+            z-index: 9000;
         }
     }
 
@@ -128,7 +135,22 @@ nav {
     @include bp('tablet') {
 
         width: 100%;
-        padding: 1rem 0;
+        height: 100vh;
+        padding: 8rem;
+        position: fixed;
+        top: 0; left: 0;
+        background-color: rgba(black, 0.5);
+
+        ul ul li a {
+            padding-left: 3rem;
+        }
+
+        @at-root #toggle-main-nav + .site-header {
+            .brand {
+                position: relative;
+                z-index: 9000;
+            }
+        }
 
         @at-root #toggle-main-nav + .site-header & {
             display: none;
@@ -140,14 +162,48 @@ nav {
     }
 }
 
+.site-header .toggle-main-nav-button span {
+    display: none;
+}
+
+.site-header .toggle-main-nav-button {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 0.3em;
+    color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.site-header .toggle-main-nav-button:before {
+    display: block;
+    content: '\f0c9';
+    padding: 0.5em;
+
+}
+
 .site-header .toggle-main-nav-button {
     @include bp('laptop') { display: none; }
     @include bp('tablet') {
-        @at-root #toggle-main-nav:checked + & {
-            display: none;
+        & {
+            position: relative;
+            z-index: 9000;
         }
+
+        @at-root #toggle-main-nav:checked + & {
+            position: fixed;
+            top: 1.5rem; right: 2.2rem;
+        }
+
+        @at-root #toggle-main-nav:checked + &:before {
+            content: '\f00d';
+        }
+
         @at-root #toggle-main-nav + & {
             display: block;
+        }
+
+        @at-root #toggle-main-nav + &:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
         }
     }
 }

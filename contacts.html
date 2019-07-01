@@ -4,6 +4,7 @@ title: Contacts
 icon: <i class="far fa-compass"></i>
 permalink: /contacts/
 body_class: page
+order: 1
 ---
 <article>
     <header>
@@ -19,3 +20,20 @@ body_class: page
         </p>
     </section>
 </article>
+<form action="http://formspree.io/genadimihaylov@gmail.com" method="post">
+    <p class="field">
+        <label for="email">E-mail</label>
+        <input type="email" name="email" id="email">
+    </p>
+    <p class="field">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name">
+    </p>
+    <p class="field">
+        <label for="message">Message</label>
+        <textarea type="text" name="message" id="message" cols="30" rows="10"></textarea>
+    </p>
+    <p class="field send">
+        <input type="submit" class="btn" value="Send">
+    </p>
+</form>

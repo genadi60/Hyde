@@ -1,6 +1,7 @@
 .site-header {
     .inner {
         display: flex;
+        flex-wrap: wrap;
         padding: 1rem var(--sizing-lt-base) 0 var(--sizing-lt-base);
         justify-content: space-between;
         align-items: center;
@@ -11,10 +12,22 @@
         }
 
         @include bp('tablet') {
-            flex-direction: column;
+           /* flex-direction: column;*/
+            .cta {
+                flex: 0 0 100%;
+                display: flex;
+                justify-content: center;
+                padding-top: 4em;
+
+                .button {
+                    padding: 1rem 2rem;
+                    font-size: 1.2rem;
+                }
+            }
 
             .brand {
                 margin-right: 0;
+                pointer-events: none;
             }
         }
     }
@@ -32,7 +45,7 @@
         background-size: cover;
 
         .brand a {
-            color: #E66;
+            color: #934eee;
             text-decoration: none;
         }
 

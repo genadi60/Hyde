@@ -1,0 +1,37 @@
+form {
+    max-width: 40rem;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #000;
+    padding: 2rem;
+    border: 1px solid #0A0;
+    border-radius: 0.3rem;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input,
+textarea {
+    display: block;
+    border: 2px solid #0A0;
+    border-radius: 0.3em;
+    padding: 0.5rem 0.8rem;
+    outline: none;
+    width: 100%;
+
+    &:focus {
+        border-color: #060;
+    }
+}
+
+input[type='submit'] {
+    width: auto;
+    background-color: #080;
+    color: #FFF;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+}

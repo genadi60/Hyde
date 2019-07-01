@@ -1,0 +1,62 @@
+$avatarSize: 9rem;
+
+.testimonials {
+    padding: 2rem 2rem;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    li {
+        display: block;
+        list-style: none outside;
+        text-align: center;
+    }
+
+    a {
+        display: block;
+        text-decoration: none;
+        color: #444;
+    }
+
+    span {
+        display: block;
+
+        &.avatar {
+            position: relative;
+            width: $avatarSize;
+            height: $avatarSize;
+            background-color: var(--color-main-bgrd, #9F9);
+            overflow: hidden;
+            border-radius: 50%;
+            z-index: -1;
+
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            &:before {
+                display: block;
+                content: '';
+                padding-top: 100%;
+            }
+        }
+
+        &.name {
+            padding: 0.5rem 0;
+            margin-top: 0.5rem;
+            font-weight: bold;
+        }
+
+        &.jobtitle {
+            padding-bottom: 0.5rem;
+            font-style: italic;
+        }
+    }
+}

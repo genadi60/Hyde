@@ -1,29 +1,26 @@
-<label for="toggle-main-nav" class="toggle-main-nav-button">
-    <svg width="20" height="20" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" class="svg-inline--fa fa-bars fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-        <path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path>
-    </svg>
-</label>
+<label for="toggle-main-nav" class="toggle-main-nav-button fas"><span>Menu</span></label>
 <nav class="{{include.location}}-nav">
     <ul>
         <li>
             <a href="{{site.baseurl}}/"><span><i class="fas fa-home"></i> Home</span></a>
         </li>
-        {% for page in site.pages %}
-            {% if page.url != '/feed.xml' and page.url != '/' %}
+        {% assign sorted_pages = site.pages | sort:"order" %}
+        {% for navitem in sorted_pages %}
+            {% if navitem.url != '/feed.xml' and navitem.url != '/' %}
 
-                <li>
-                    <a href='{{site.baseurl}}{{ page.url }}'>
-                        <span class="title">{{ page.icon }} {{ page.title }}</span>
+                <li {% if page.url == navitem.url %} class="active-page" {% endif %}>
+                    <a href='{{site.baseurl}}{{ navitem.url }}'>
+                        <span class="title">{{ navitem.icon }} {{ navitem.title }}</span>
                         <span class="date"></span>
                     </a>
 
                     <ul>
-                        {% for page in site.pages %}
-                            {% if page.url != '/feed.xml' and page.url != '/' %}
-
+                        {% for navitem in sorted_pages %}
+                            {% if navitem.url != '/feed.xml' and navitem.url != '/' %}
                                 <li>
-                                    <a href='{{site.baseurl}}{{ page.url }}'>
-                                        <span class="title">{{ page.icon }} {{ page.title }}</span>
+                                <!--<li {% if page.url == navitem.url %} class="active-page" {% endif %}>-->
+                                    <a href='{{site.baseurl}}{{ navitem.url }}'>
+                                        <span class="title">{{ navitem.icon }} {{ navitem.title }}</span>
                                         <span class="date"><!--{{site.time | date_to_string}}--></span>
                                     </a>
                                 </li>
@@ -40,5 +37,8 @@
 
     </ul>
 </nav>
-<a href="mailto:genadimihaylov@gmail.com" class="button">Call us</a>
+<section class="cta">
+    <a href="mailto:genadimihaylov@gmail.com" class="button">Call us</a>
+</section>
+
 

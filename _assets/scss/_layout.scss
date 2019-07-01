@@ -1,6 +1,7 @@
 body {
     background: var(--color-main-bgrd, #000);
-    color: var(--color-main-text, #FF0);
+    color: var(--color-main-text, #444);
+
 }
 
 .site-content iframe {
@@ -9,6 +10,8 @@ body {
 }
 
 .site-content {
+    max-width: 1024px;
+    margin: 0 auto;
     padding: var(--sizing-lt-base);
 }
 
